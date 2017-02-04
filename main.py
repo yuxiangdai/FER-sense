@@ -5,7 +5,7 @@ import indicoio
 indicoio.config.api_key = 'a93e258e9dd46a47c2454287299ed82b'
 
 # single example
-output = indicoio.fer("Man-smiling.jpg")
+output = indicoio.fer("img/Man-smiling.jpg")
 emotions = "A man is "
 add='true'
 
