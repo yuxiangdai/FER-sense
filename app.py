@@ -1,7 +1,6 @@
 from flask import Flask, render_template
 import subprocess
 from gtts import gTTS
-
 import indicoio
 indicoio.config.api_key = 'a93e258e9dd46a47c2454287299ed82b'
 
