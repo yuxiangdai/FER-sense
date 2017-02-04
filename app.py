@@ -40,6 +40,37 @@ def sad():
 @app.route('/angry')
 def angry():
     emotions = "The subject is" + str(int(output['Angry']*100)) + " percent angry"
+
+    audio_file = "output.mp3"
+    tts = gTTS(text=emotions, lang="en")
+    tts.save(audio_file)
+    return_code = subprocess.call(["afplay", audio_file])
+    return render_template('index.html')
+
+@app.route('/fear')
+def fear():
+    emotions = "The subject is" + str(int(output['Fear']*100)) + " percent fear"
+    
+    audio_file = "output.mp3"
+    tts = gTTS(text=emotions, lang="en")
+    tts.save(audio_file)
+    return_code = subprocess.call(["afplay", audio_file])
+    return render_template('index.html')
+
+@app.route('/surprise')
+def surprise():
+    emotions = "The subject is" + str(int(output['Surprise']*100)) + " percent surprise"
+    
+    audio_file = "output.mp3"
+    tts = gTTS(text=emotions, lang="en")
+    tts.save(audio_file)
+    return_code = subprocess.call(["afplay", audio_file])
+    return render_template('index.html')
+
+@app.route('/neutral')
+def neutral():
+    emotions = "The subject is" + str(int(output['Neutral']*100)) + " percent neutral"
+    
     audio_file = "output.mp3"
     tts = gTTS(text=emotions, lang="en")
     tts.save(audio_file)
